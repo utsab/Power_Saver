@@ -1,0 +1,78 @@
+<style>
+#button{
+  background-color: #FB8C00;
+  border-radius: 8px;
+  color: white;
+  font-size:20px;
+  padding:8px 10px;
+  font-family: Raleway;
+  border-color: white;
+  margin-top: 10px;
+  width: 100px;
+
+}
+
+#heading{
+  font-family: Raleway;
+  text-align: center;
+  font-size: 40px;
+  color: #837E7C;
+  width:40%;
+  position: relative;
+  top:-25%;
+  left:25%;
+}
+
+p{
+  font-family: Raleway;
+  text-align: center;
+  font-size: 12px;
+  color: #837E7C;
+}
+
+#super-container{
+  width:500px;
+  position: relative;
+  left:25%;
+  right:25%;
+  top:-25%;
+}
+
+
+</style>
+<img src="../PS.png" style="width:304px;height:314px;">
+<p id="heading">Get Paid For Saving Energy</p>
+<div id="super-container">
+<form id="checkout" method="post" action="/api/users">
+  <div id="payment-form"></div>
+  <input type="submit" id="button" value="Save">
+  <p>*Please note, you will be be paid for manually shutting down your computer. So, Please try and save energy</p>
+
+</form>
+</div>
+
+
+<script src="https://js.braintreegateway.com/v2/braintree.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Raleway:400,500,300' rel='stylesheet' type='text/css'>
+<script>
+  braintree.setup(
+    // Replace this with a client token from your server
+    "<%= @client_token %>",
+    "dropin", {
+      container: "payment-form"
+    });
+</script>
+
+<!-- </pre>
+<h1>Braintree Credit Card Transaction Form</h1>
+<div><form id="braintree- payment-form" action="/create_transaction" method="POST"><label>Card Number</label>
+<input type="text" autocomplete="off" size="20" data-encrypted-name="number" />
+
+<label>CVV</label>
+<input type="text" autocomplete="off" size="4" data-encrypted-name="cvv" />
+
+<label>Expiration (MM/YYYY)</label>
+<input type="text" name="month" size="2" /> / <input type="text" name="year" size="4" />
+
+<input id="submit" type="submit" /></form></div>
+<pre> -->
